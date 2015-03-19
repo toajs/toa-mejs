@@ -119,11 +119,11 @@ var locals = {
 
 The MIT License (MIT)
 
-[npm-url]: https://npmjs.org/package/toa-ejs
-[npm-image]: http://img.shields.io/npm/v/toa-ejs.svg
+[npm-url]: https://npmjs.org/package/toa-mejs
+[npm-image]: http://img.shields.io/npm/v/toa-mejs.svg
 
-[travis-url]: https://travis-ci.org/toajs/toa-ejs
-[travis-image]: http://img.shields.io/travis/toajs/toa-ejs.svg
+[travis-url]: https://travis-ci.org/toajs/toa-mejs
+[travis-image]: http://img.shields.io/travis/toajs/toa-mejs.svg
 
 [talk-url]: https://guest.talk.ai/rooms/a6a9331024
 [talk-image]: https://img.shields.io/talk/t/a6a9331024.svg
