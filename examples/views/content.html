@@ -1,0 +1,6 @@
+<div>
+  <p>server time is: <%= it.now() %></p>
+  <p>request ip is: <%= it.ip() %></p>
+  <p><%= JSON.stringify(it.users) %></p>
+  <%- include('user') %>
+</div>

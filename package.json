@@ -1,0 +1,50 @@
+{
+  "name": "toa-mejs",
+  "description": "Mejs render module for toa.",
+  "authors": [
+    "Yan Qing <admin@zensh.com>"
+  ],
+  "version": "0.1.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:toajs/toa-mejs.git"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "homepage": "https://github.com/toajs/toa-mejs",
+  "keywords": [
+    "toa",
+    "toa-module",
+    "toa-middleware",
+    "mejs",
+    "ejs",
+    "render",
+    "view",
+    "templates"
+  ],
+  "dependencies": {
+    "mejs": "^0.2.2"
+  },
+  "devDependencies": {
+    "gulp": ">=3.8.0",
+    "gulp-jshint": ">=1.8.4",
+    "gulp-mocha": ">=1.0.0",
+    "gulp-sequence": ">=0.3.0",
+    "mocha": ">=1.21.0",
+    "should": ">=4.0.4",
+    "supertest": ">=0.15.0",
+    "toa": ">=0.5.2"
+  },
+  "scripts": {
+    "test": "gulp test"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "test",
+    "examples",
+    "gulpfile.js"
+  ]
+}
