@@ -18,12 +18,12 @@ module.exports = function(app, pattern, options) {
   options = options || {};
   options.writeResp = options.writeResp !== false;
 
-  var renderTpl = mejsCompile.initMejs(pattern, options);
+  var mejs = app.mejs = mejsCompile.initMejs(pattern, options);
 
   app.context.render = function(view, data) {
-    data = merge(data || {}, renderTpl.mejs.locals, this);
+    data = merge(data || {}, mejs.locals, this);
 
-    var html = renderTpl(view, data);
+    var html = mejs.renderEx(view, data);
     if (data.writeResp === true || (options.writeResp && data.writeResp !== false)) {
       this.type = 'html';
       this.body = html;
