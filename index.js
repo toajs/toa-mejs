@@ -12,7 +12,7 @@ var mejsCompile = require('mejs')
  * @param {Object} settings user settings
  */
 module.exports = function (app, pattern, options) {
-  if (app.context.render) throw new Error('app.context.render is exist!')
+  if (app.context.render) throw new Error('app.context.render exist!')
   if (!pattern) throw new Error('pattern required')
 
   options = options || {}
