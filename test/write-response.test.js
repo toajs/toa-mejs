@@ -32,7 +32,6 @@ describe('test/write-response.test.js', function () {
         .expect('content-type', 'text/html; charset=utf-8')
         .expect(/zensh/)
         .expect(200, done)
-
     })
 
     it('should return html with configuration writeResp = false', function (done) {

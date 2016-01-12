@@ -13,19 +13,19 @@ Mejs render module for toa, it is available for koa.
 ### Example
 
 ```js
-var toa = require('toa');
-var toaMejs = require('toa-mejs');
+var toa = require('toa')
+var toaMejs = require('toa-mejs')
 
-var app = toa(function (Thunk) {
-  return this.render('user', {name: 'toa', age: 1});
-});
+var app = toa(function () {
+  return this.render('user', {name: 'toa', age: 1})
+})
 
 toaEjs(app, 'views/**/*.html', {
   layout: 'template',
   locals: locals
-});
+})
 
-app.listen(3000);
+app.listen(3000)
 ```
 
 Or you can checkout the [example](https://github.com/toajs/toa-mejs/tree/master/examples).
@@ -39,7 +39,7 @@ npm install toa-mejs
 ## API
 
   ```js
-  var toaMejs = require('toa-mejs');
+  var toaMejs = require('toa-mejs')
   ```
 ### toaMejs(app, pattern, options)
 
@@ -65,11 +65,11 @@ It is a synchronization function. return template string that filled with data.
 
 
 ```js
-this.render('user', {name: 'toa', age: 1});
+this.render('user', {name: 'toa', age: 1})
 ```
 
 ```js
-this.render('user', {name: 'toa', age: 1, writeResp: false});
+this.render('user', {name: 'toa', age: 1, writeResp: false})
 ```
 
 ### Layouts
@@ -107,12 +107,12 @@ pass gobal locals by `options.locals`, locals can be functions that can be calle
 var locals = {
   version: 'v1.0.0',
   now: function() {
-    return new Date();
+    return new Date()
   },
   __: function() {
-    return this.__.apply(this, arguments); // toa-i18n's `__` method.
+    return this.__.apply(this, arguments) // toa-i18n's `__` method.
   }
-};
+}
 ```
 
 ## License

@@ -39,10 +39,10 @@ module.exports = function (app, pattern, options) {
 module.exports.mejs = mejsCompile
 
 function merge (target, source, ctx) {
-  for (var key in source) {
-    if (key in target) continue
+  Object.keys(source).map(function (key) {
+    if (key in target) return
     assignment(source[key], key)
-  }
+  })
   return target
 
   function assignment (value, key) {
