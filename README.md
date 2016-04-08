@@ -4,7 +4,7 @@ Mejs render module for toa, it is available for koa.
 
 [![NPM version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
-[![Talk topic][talk-image]][talk-url]
+[![Downloads][downloads-image]][downloads-url]
 
 ## [toa](https://github.com/toajs/toa)
 
@@ -125,5 +125,5 @@ The MIT License (MIT)
 [travis-url]: https://travis-ci.org/toajs/toa-mejs
 [travis-image]: http://img.shields.io/travis/toajs/toa-mejs.svg
 
-[talk-url]: https://guest.talk.ai/rooms/a6a9331024
-[talk-image]: https://img.shields.io/talk/t/a6a9331024.svg
+[downloads-url]: https://npmjs.org/package/toa-mejs
+[downloads-image]: http://img.shields.io/npm/dm/toa-mejs.svg?style=flat-square
