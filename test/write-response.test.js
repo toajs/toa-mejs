@@ -3,15 +3,15 @@
 //
 // **License:** MIT
 
-var toa = require('toa')
-var tman = require('tman')
-var request = require('supertest')
-var render = require('..')
+const Toa = require('toa')
+const tman = require('tman')
+const request = require('supertest')
+const render = require('..')
 
 tman.suite('test/write-response.test.js', function () {
   tman.suite('writeResp option', function () {
     tman.it('should return html with default configuration and writeResp option = false', function () {
-      var app = toa()
+      const app = new Toa()
       render(app, 'examples/views/*.html', {
         layout: 'template.oc',
         delimiter: '$'
@@ -34,7 +34,7 @@ tman.suite('test/write-response.test.js', function () {
     })
 
     tman.it('should return html with configuration writeResp = false', function () {
-      var app = toa()
+      const app = new Toa()
       render(app, 'examples/views/*.html', {
         layout: 'template.oc',
         delimiter: '$',

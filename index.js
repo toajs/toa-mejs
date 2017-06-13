@@ -3,7 +3,7 @@
 //
 // **License:** MIT
 
-var mejsCompile = require('mejs')
+const mejsCompile = require('mejs')
 
 /**
  * set app.context.render
@@ -18,12 +18,12 @@ module.exports = function (app, pattern, options) {
   options = options || {}
   options.writeResp = options.writeResp !== false
 
-  var mejs = app.mejs = mejsCompile.initMejs(pattern, options)
+  const mejs = app.mejs = mejsCompile.initMejs(pattern, options)
 
   app.context.render = function (view, data) {
     data = merge(data || {}, mejs.locals, this)
 
-    var html = mejs.renderEx(view, data)
+    let html = mejs.renderEx(view, data)
     if (data.writeResp === true || (options.writeResp && data.writeResp !== false)) {
       this.type = 'html'
       this.body = html
@@ -39,18 +39,14 @@ module.exports = function (app, pattern, options) {
 module.exports.mejs = mejsCompile
 
 function merge (target, source, ctx) {
-  Object.keys(source).map(function (key) {
-    if (key in target) return
+  for (let key of Object.keys(source)) {
+    if (key in target) continue
     assignment(source[key], key)
-  })
+  }
   return target
 
   function assignment (value, key) {
     if (typeof value !== 'function') target[key] = value
-    else {
-      target[key] = function () {
-        return value.apply(ctx, arguments)
-      }
-    }
+    else target[key] = function () { return value.apply(ctx, arguments) }
   }
 }

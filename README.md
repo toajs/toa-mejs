@@ -1,5 +1,5 @@
-toa-mejs
-====
+# toa-mejs
+
 Mejs render module for toa, it is available for koa.
 
 [![NPM version][npm-image]][npm-url]
@@ -13,10 +13,11 @@ Mejs render module for toa, it is available for koa.
 ### Example
 
 ```js
-var toa = require('toa')
-var toaMejs = require('toa-mejs')
+const Toa = require('toa')
+const toaMejs = require('toa-mejs')
 
-var app = toa(function () {
+const app = new Toa()
+app.use(function () {
   return this.render('user', {name: 'toa', age: 1})
 })
 
@@ -38,9 +39,10 @@ npm install toa-mejs
 
 ## API
 
-  ```js
-  var toaMejs = require('toa-mejs')
-  ```
+```js
+const toaMejs = require('toa-mejs')
+```
+
 ### toaMejs(app, pattern, options)
 
 It will add `render` method to `context`.
@@ -54,7 +56,6 @@ It will add `render` method to `context`.
 - `options.delimiter`: Character to use with angle brackets for open/close, default is `%`.
 - `options.rmWhitespace`: Remove all safe-to-remove whitespace, including leading and trailing whitespace. It also enables a safer version of `-%>` line slurping for all scriptlet tags (it does not strip new lines of tags in the middle of a line).
 
-
 ### context.render(viewName, [data])
 
 It is a synchronization function. return template string that filled with data.
@@ -62,7 +63,6 @@ It is a synchronization function. return template string that filled with data.
 - `data.layout`: layout template name, default is `undefined`, set `false` to disable global layout.
 - `data.writeResp`: Write template to response body, default is `true`.
 - ...
-
 
 ```js
 this.render('user', {name: 'toa', age: 1})
@@ -104,7 +104,7 @@ support mejs default include.
 pass gobal locals by `options.locals`, locals can be functions that can be called in mejs templates.
 
 ```js
-var locals = {
+const locals = {
   version: 'v1.0.0',
   now: function() {
     return new Date()

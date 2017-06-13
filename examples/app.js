@@ -3,11 +3,11 @@
 //
 // **License:** MIT
 
-var toa = require('toa')
-var toaMejs = require('../index')
+const toa = require('toa')
+const toaMejs = require('../index')
 
-var app = toa(function () {
-  var users = [{
+const app = toa(function () {
+  let users = [{
     name: 'Toa 1'
   }, {
     name: 'Toa 2'
@@ -17,7 +17,7 @@ var app = toa(function () {
   this.render('content', {users: users})
 })
 
-var locals = {
+const locals = {
   version: 'v1.0.0',
   now: function () {
     return new Date()

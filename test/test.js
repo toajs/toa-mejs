@@ -3,15 +3,15 @@
 //
 // **License:** MIT
 
-var toa = require('toa')
-var tman = require('tman')
-var assert = require('assert')
-var request = require('supertest')
-var render = require('..')
+const Toa = require('toa')
+const tman = require('tman')
+const assert = require('assert')
+const request = require('supertest')
+const render = require('..')
 
 tman.suite('test/test.js', function () {
   tman.suite('intman.it()', function () {
-    var app = toa()
+    const app = new Toa()
 
     tman.it('should throw error if no pattern', function () {
       assert.throws(function () {
@@ -22,7 +22,7 @@ tman.suite('test/test.js', function () {
 
   tman.suite('server', function () {
     tman.it('should render page ok', function () {
-      var app = require('../examples/app')
+      const app = require('../examples/app')
       return request(app)
         .get('/')
         .expect('content-type', 'text/html; charset=utf-8')
@@ -33,7 +33,7 @@ tman.suite('test/test.js', function () {
     })
 
     tman.it('should render page ok with custom open/close', function () {
-      var app = toa()
+      const app = new Toa()
       render(app, 'examples/views/*.html', {
         layout: 'template.oc',
         delimiter: '$'
